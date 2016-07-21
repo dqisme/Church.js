@@ -2,6 +2,7 @@ var church = require('../src/church');
 var expect = require('chai').expect;
 
 describe('test church', function () {
+
   describe('test identifiers recognition', function () {
 
     it('should can recognize integer as identifier', function () {
@@ -21,6 +22,13 @@ describe('test church', function () {
     it('should can recognize letter words as identifier', function () {
       expect(church.isIdentifier('foo')).to.be.true;
       expect(church.isIdentifier('bar')).to.be.true;
+    });
+  });
+
+  describe('test abstraction recognition', function() {
+
+    it('should can recognize simple abstraction with only identifier', function() {
+      expect(church.isAbstraction('&x.x')).to.be.true;
     });
   });
 });
