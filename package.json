@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dqisme/church.js#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^2.5.3"
   }
 }
