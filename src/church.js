@@ -1,6 +1,7 @@
 var tokens = {
   IDENTIFIER: '[\\w\\d]+',
-  ABSTRACTION: '&(.)\\.(.)',
+  ABSTRACTION: '&(.+)\\.(.+)',
+  APPLICATION: '(.+?) (.+?)',
 };
 
 var TokenRegExp = function (token) {
@@ -13,6 +14,9 @@ var church = {
   },
   isAbstraction: function (input) {
     return new TokenRegExp(tokens.ABSTRACTION).test(input);
+  },
+  isApplication: function (input) {
+    return new TokenRegExp(tokens.APPLICATION).test(input);
   }
 };
 

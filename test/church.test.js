@@ -27,8 +27,23 @@ describe('test church', function () {
 
   describe('test abstraction recognition', function() {
 
-    it('should can recognize simple abstraction with only identifier', function() {
+    it('should can recognize abstraction form', function() {
       expect(church.isAbstraction('&x.x')).to.be.true;
+      expect(church.isAbstraction('&xx.xx')).to.be.true;
+      expect(church.isAbstraction('&11.111')).to.be.true;
+      expect(church.isAbstraction('&xx.111')).to.be.true;
+      expect(church.isAbstraction('&xx.1dd')).to.be.true;
+    });
+  });
+
+  describe('test application recognition', function() {
+
+    it('should can recognize application form', function () {
+      expect(church.isApplication('x x')).to.be.true;
+      expect(church.isApplication('xx xx')).to.be.true;
+      expect(church.isApplication('11 111')).to.be.true;
+      expect(church.isApplication('xx 111')).to.be.true;
+      expect(church.isApplication('xx 1dd')).to.be.true;
     });
   });
 });
