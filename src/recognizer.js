@@ -1,5 +1,5 @@
-var Recognizer = function() {
-
+var Recognizer = function(form) {
+  this.form = form;
 };
 
 module.exports = Recognizer;
