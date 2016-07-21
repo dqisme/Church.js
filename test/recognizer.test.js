@@ -1,3 +1,7 @@
-/**
- * Created by dq on 7/21/16.
- */
+var Recognizer = require('../src/recognizer');
+
+describe('test recognizer', function () {
+  it('should be a function', function () {
+    expect(Recognizer).to.be.a('function');
+  });
+})

@@ -1,3 +1,5 @@
-/**
- * Created by dq on 7/22/16.
- */
+var Recognizer = function() {
+
+};
+
+module.exports = Recognizer;
