@@ -1,3 +1,2 @@
-/**
- * Created by dq on 7/22/16.
- */
+console.log('setup!');
+global.expect = require('chai').expect;

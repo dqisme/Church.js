@@ -1,5 +1,4 @@
 var church = require('../src/church');
-var expect = require('chai').expect;
 
 describe('test church', function () {
 
