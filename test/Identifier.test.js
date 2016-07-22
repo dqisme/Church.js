@@ -18,7 +18,7 @@ describe('Identifier', function () {
     expect(identifier).to.have.property('form')
   });
 
-  it('should have form as regular expression as \\w+', function () {
+  it('should have form as regular expression for identifier', function () {
     var identifierForm = /^[a-zA-Z]+$/;
     var identifier = new Identifier();
     expect(identifier.form).to.be.eql(identifierForm);
