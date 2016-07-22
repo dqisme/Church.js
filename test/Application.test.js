@@ -11,4 +11,9 @@ describe('Application', function () {
     expect(application).to.have.property('content');
     expect(application.content).to.be.equal(content);
   });
+
+  it('should have form inherited from LambdaTerm', function () {
+    var application = new Application();
+    expect(application).to.have.property('form');
+  });
 });
