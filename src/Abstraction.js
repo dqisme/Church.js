@@ -1,4 +1,5 @@
 var LambdaTerm = require('./LambdaTerm');
+var Variable = require('./Variable');
 
 var Abstraction = function (content) {
   this.content = content;
@@ -6,7 +7,7 @@ var Abstraction = function (content) {
     if (!this.form.test(content)) {
       throw new Error('content is NOT a abstraction');
     } else {
-      this.boundVariable = this.form.exec(content)[1];
+      this.boundVariable = new Variable(this.form.exec(content)[1]);
       this.body = this.form.exec(content)[2];
     }
   } catch (error) {

@@ -1,4 +1,5 @@
 var Abstraction = require('../src/Abstraction');
+var Variable = require('../src/Variable');
 
 describe('Abstraction', function () {
 
@@ -34,6 +35,13 @@ describe('Abstraction', function () {
     var abstractionContent = '&x.x';
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction).to.have.property('boundVariable');
+  });
+
+  it('should have a bound variable which can be constructed by variable', function () {
+    var abstractionContent = '&x.x';
+    var boundVariable = new Variable('x');
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction.boundVariable).to.be.eql(boundVariable);
   });
 
   it('should have a body when constructed with a abstraction', function () {
