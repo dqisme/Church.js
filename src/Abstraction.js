@@ -4,6 +4,7 @@ var Abstraction = function (content) {
   this.content = content;
 };
 
-Abstraction.prototype = new LambdaTerm();
+var abstractionForm = /^&(.+?)\.(.+?)$/;
+Abstraction.prototype = new LambdaTerm(abstractionForm);
 
 module.exports = Abstraction;

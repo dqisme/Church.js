@@ -17,4 +17,10 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction();
     expect(abstraction).to.have.property('form');
   });
+
+  it('should have form as regular expression for abstraction', function () {
+    var abstractionForm = /^&(.+?)\.(.+?)$/;
+    var abstraction = new Abstraction();
+    expect(abstraction.form).to.be.eql(abstractionForm);
+  });
 });
