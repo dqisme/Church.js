@@ -23,4 +23,10 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction();
     expect(abstraction.form).to.be.eql(abstractionForm);
   });
+
+  it('should have error when constructed with a non-abstraction content', function () {
+    var nonAbstractionContent = 'x';
+    var abstraction = new Abstraction(nonAbstractionContent);
+    expect(abstraction).to.have.property('error');
+  });
 });
