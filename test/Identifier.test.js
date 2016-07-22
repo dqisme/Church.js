@@ -17,4 +17,10 @@ describe('Identifier', function () {
     var identifier = new Identifier();
     expect(identifier).to.have.property('form')
   });
+
+  it('should have form as regular expression as \\w+', function () {
+    var identifier_form = /\w+/;
+    var identifier = new Identifier();
+    expect(identifier.form).to.be.eql(identifier_form);
+  });
 });

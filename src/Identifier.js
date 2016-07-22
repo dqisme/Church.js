@@ -4,6 +4,7 @@ var Identifier = function (content) {
   this.content = content;
 };
 
-Identifier.prototype = new LambdaTerm();
+var identifier_form = /\w+/;
+Identifier.prototype = new LambdaTerm(identifier_form);
 
 module.exports = Identifier;
