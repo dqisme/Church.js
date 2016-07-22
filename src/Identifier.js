@@ -13,7 +13,7 @@ var Identifier = function (content) {
   }
 };
 
-var identifier_form = /^[a-zA-Z]+$/;
-Identifier.prototype = new LambdaTerm(identifier_form);
+var identifierForm = /^[a-zA-Z]+$/;
+Identifier.prototype = new LambdaTerm(identifierForm);
 
 module.exports = Identifier;
