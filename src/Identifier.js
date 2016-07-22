@@ -6,9 +6,9 @@ var Identifier = function (content) {
     if (!this.form.test(content)) {
       throw new Error('content is NOT a identifier');
     }
-  } catch (e) {
-    if(e) {
-      this.error = e;
+  } catch (error) {
+    if(error) {
+      this.error = error;
     }
   }
 };
