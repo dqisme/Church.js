@@ -1,3 +1,1 @@
-/**
- * Created by dq on 7/22/16.
- */
+var Identifier = require('../src/Identifier');
