@@ -12,4 +12,9 @@ describe('Abstraction', function () {
     expect(abstraction).to.have.property('content');
     expect(abstraction.content).to.be.equal(content);
   });
+
+  it('should have form inherited from LambdaTerm', function () {
+    var abstraction = new Abstraction();
+    expect(abstraction).to.have.property('form');
+  });
 });
