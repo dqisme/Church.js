@@ -12,4 +12,9 @@ describe('Identifier', function () {
     expect(identifier).to.have.property('content');
     expect(identifier.content).to.be.equal(content);
   });
+
+  it('should have form inherited from LambdaTerm', function () {
+    var identifier = new Identifier();
+    expect(identifier).to.have.property('form')
+  });
 });
