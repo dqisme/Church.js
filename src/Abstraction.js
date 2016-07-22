@@ -5,6 +5,8 @@ var Abstraction = function (content) {
   try {
     if (!this.form.test(content)) {
       throw new Error('content is NOT a abstraction');
+    } else {
+      this.boundVariable = this.form.exec(content)[1];
     }
   } catch (error) {
     this.error = error;

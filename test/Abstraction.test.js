@@ -29,4 +29,12 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction(nonAbstractionContent);
     expect(abstraction).to.have.property('error');
   });
+
+  it('should have a bound variable when constructed with a abstraction', function () {
+    var abstractionContent = '&x.x';
+    var boundVariable = 'x';
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction).to.have.property('boundVariable');
+    expect(abstraction.boundVariable).to.be.equal(boundVariable);
+  });
 });
