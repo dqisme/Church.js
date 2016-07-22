@@ -22,4 +22,10 @@ describe('Application', function () {
     var application = new Application();
     expect(application.form).to.be.eql(applicationForm);
   });
+
+  it('should have error when constructed with a non-application content', function () {
+    var nonApplicationContent = 'x';
+    var application = new Application(nonApplicationContent);
+    expect(application).to.have.property('error');
+  });
 });
