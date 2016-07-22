@@ -16,4 +16,10 @@ describe('Application', function () {
     var application = new Application();
     expect(application).to.have.property('form');
   });
+
+  it('should have form as regular expression for application', function () {
+    var applicationForm = /^(.+?) (.+?)$/;
+    var application = new Application();
+    expect(application.form).to.be.eql(applicationForm);
+  });
 });

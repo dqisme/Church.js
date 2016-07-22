@@ -4,6 +4,7 @@ var Application = function (content) {
   this.content = content;
 };
 
-Application.prototype = new LambdaTerm();
+var applicationForm = /^(.+?) (.+?)$/;
+Application.prototype = new LambdaTerm(applicationForm);
 
 module.exports = Application;
