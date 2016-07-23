@@ -1,7 +1,8 @@
 var LambdaTerm = require('./LambdaTerm');
 
 var Variable = function (content) {
-  this.content = content;
+  var form = /^[a-zA-Z]+$/;
+  this.constructor(form, content);
   try {
     if (!this.form.test(content)) {
       throw new Error('content is NOT a variable');
@@ -13,7 +14,6 @@ var Variable = function (content) {
   }
 };
 
-var variableForm = /^[a-zA-Z]+$/;
-Variable.prototype = new LambdaTerm(variableForm);
+Variable.prototype = new LambdaTerm();
 
 module.exports = Variable;
