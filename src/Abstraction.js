@@ -5,7 +5,7 @@ var Abstraction = function (content) {
   var form = /^&(.+?)\.(.+?)$/;
   var self = this;
   var mutator = function (terms) {
-    self.boundVariable = new Variable(terms[1]);
+    self.boundVariable = terms[1];
     self.body = terms[2];
   };
   this.constructor(form, content, mutator);
