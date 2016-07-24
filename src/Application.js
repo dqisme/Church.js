@@ -6,6 +6,7 @@ var Application = function (content) {
   var self = this;
   var mutator = function (terms) {
     self.function = terms[1];
+    self.argument = terms[2];
   }
   this.constructor(form, content, mutator);
 };
