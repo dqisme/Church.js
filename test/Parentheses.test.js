@@ -17,4 +17,10 @@ describe('Parentheses Convention', function () {
     var parentheses = new Parentheses();
     expect(parentheses.form).to.be.eql(parenthesesForm);
   });
+
+  it('should have error when constructed with a non-application content', function () {
+    var nonParenthesesContent = 'x';
+    var parentheses = new Parentheses(nonParenthesesContent);
+    expect(parentheses).to.have.property('error');
+  });
 });
