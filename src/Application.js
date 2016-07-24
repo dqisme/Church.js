@@ -1,17 +1,11 @@
 var LambdaTerm = require('./LambdaTerm');
 
 var Application = function (content) {
+  var form = /^(.+?) (.+?)$/;
   this.content = content;
-  try {
-    if (!this.form.test(content)) {
-      throw new Error('content is NOT a abstraction');
-    }
-  } catch (error) {
-    this.error = error;
-  }
+  this.constructor(form, content);
 };
 
-var applicationForm = /^(.+?) (.+?)$/;
-Application.prototype = new LambdaTerm(applicationForm);
+Application.prototype = new LambdaTerm();
 
 module.exports = Application;
