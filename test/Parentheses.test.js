@@ -4,4 +4,17 @@ describe('Parentheses Convention', function () {
   it('should be a function', function () {
     expect(Parentheses).to.be.a('function');
   });
+
+  it('should have form and content inherited from LambdaTerm', function () {
+    var parenthesesContent = '(x)';
+    var parentheses = new Parentheses(parenthesesContent);
+    expect(parentheses).to.have.property('form');
+    expect(parentheses).to.have.property('content');
+  });
+
+  it('should have form as regular expression for parentheses', function () {
+    var parenthesesForm = /^\((.+?)\)$/;
+    var parentheses = new Parentheses();
+    expect(parentheses.form).to.be.eql(parenthesesForm);
+  });
 });
