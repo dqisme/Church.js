@@ -23,4 +23,10 @@ describe('Parentheses Convention', function () {
     var parentheses = new Parentheses(nonParenthesesContent);
     expect(parentheses).to.have.property('error');
   });
+
+  it('should have body property when constructed with a parenthetical content', function () {
+    var parentheticalContent = '(x)';
+    var parentheses = new Parentheses(parentheticalContent);
+    expect(parentheses).to.have.property('body');
+  });
 });
