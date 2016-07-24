@@ -3,7 +3,11 @@ var LambdaTerm = require('./LambdaTerm');
 var Application = function (content) {
   var form = /^(.+?) (.+?)$/;
   this.content = content;
-  this.constructor(form, content);
+  var self = this;
+  var mutator = function (terms) {
+    self.function = terms[1];
+  }
+  this.constructor(form, content, mutator);
 };
 
 Application.prototype = new LambdaTerm();

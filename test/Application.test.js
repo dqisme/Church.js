@@ -28,4 +28,10 @@ describe('Application', function () {
     var application = new Application(nonApplicationContent);
     expect(application).to.have.property('error');
   });
+
+  it('should have a function property when constructed with a application', function () {
+    var applicationContent = 'x x';
+    var application = new Application(applicationContent);
+    expect(application).to.have.property('function');
+  });
 });
