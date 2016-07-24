@@ -1,5 +1,5 @@
 {
-  "name": "church.js",
+  "name": "Church.js",
   "version": "1.0.0",
   "description": "An attempt to implement Lambda Calculus in JavaScript(ECMA-262 5th.)",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dqisme/church.js.git"
+    "url": "git+https://github.com/dqisme/Church.js.git"
   },
   "author": "dq",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dqisme/church.js/issues"
+    "url": "https://github.com/dqisme/Church.js/issues"
   },
-  "homepage": "https://github.com/dqisme/church.js#readme",
+  "homepage": "https://github.com/dqisme/Church.js#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
