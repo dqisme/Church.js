@@ -2,11 +2,12 @@
   "name": "Church.js",
   "version": "1.0.0",
   "description": "An attempt to implement Lambda Calculus in JavaScript(ECMA-262 5th.)",
-  "main": "index.js",
+  "main": "src/main.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "start": "node .",
     "test": "mocha"
   },
   "repository": {
