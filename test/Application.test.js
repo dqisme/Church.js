@@ -12,17 +12,6 @@ describe('Application', function () {
     expect(application.content).to.be.equal(content);
   });
 
-  it('should have form inherited from LambdaTerm', function () {
-    var application = new Application();
-    expect(application).to.have.property('form');
-  });
-
-  it('should have form as regular expression for application', function () {
-    var applicationForm = /^(.+?) (.+?)$/;
-    var application = new Application();
-    expect(application.form).to.be.eql(applicationForm);
-  });
-
   it('should have error when constructed with a non-application content', function () {
     var nonApplicationContent = 'x';
     var application = new Application(nonApplicationContent);

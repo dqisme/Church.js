@@ -13,17 +13,6 @@ describe('Variable', function () {
     expect(variable.content).to.be.equal(content);
   });
 
-  it('should have form inherited from LambdaTerm', function () {
-    var variable = new Variable();
-    expect(variable).to.have.property('form')
-  });
-
-  it('should have form as regular expression for variable', function () {
-    var variableForm = /^[a-zA-Z]+$/;
-    var variable = new Variable();
-    expect(variable.form).to.be.eql(variableForm);
-  });
-
   it('should can be constructed with content that are one letter', function () {
     var letter = 'x';
     var variable = new Variable(letter);

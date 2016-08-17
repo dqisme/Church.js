@@ -1,10 +1,10 @@
 var LambdaTerm = function (form, content, mutator) {
-  this.form = form || /^.*$/;
+  form = form || /^.*$/;
   this.content = content;
-  if (!this.form.test(content)) {
+  if (!form.test(content)) {
     this.error = 'content is NOT a valid lambda term';
   } else if (typeof mutator === 'function') {
-    mutator(this.form.exec(content));
+    mutator(form.exec(content));
   }
 };
 

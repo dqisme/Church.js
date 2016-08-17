@@ -8,9 +8,7 @@ describe('Lambda Term', function () {
     var form = /foo/;
     var content = 'xxx';
     var lambdaTerm = new LambdaTerm(form, content);
-    expect(lambdaTerm).to.have.property('form');
     expect(lambdaTerm).to.have.property('content');
-    expect(lambdaTerm.form).to.be.eql(form);
     expect(lambdaTerm.content).to.be.equal(content);
   });
 });

@@ -14,17 +14,6 @@ describe('Abstraction', function () {
     expect(abstraction.content).to.be.equal(content);
   });
 
-  it('should have form inherited from LambdaTerm', function () {
-    var abstraction = new Abstraction();
-    expect(abstraction).to.have.property('form');
-  });
-
-  it('should have form as regular expression for abstraction', function () {
-    var abstractionForm = /^&(.+?)\.(.+?)$/;
-    var abstraction = new Abstraction();
-    expect(abstraction.form).to.be.eql(abstractionForm);
-  });
-
   it('should have error when constructed with a non-abstraction content', function () {
     var nonAbstractionContent = 'x';
     var abstraction = new Abstraction(nonAbstractionContent);
