@@ -9,13 +9,14 @@ describe('Application', function () {
     var content = '&x.x';
     var application = new Application(content);
     expect(application).to.have.property('content');
+    expect(application).to.have.property('valid');
     expect(application.content).to.be.equal(content);
   });
 
-  it('should have error when constructed with a non-application content', function () {
+  it('should be invalid when constructed with a non-application content', function () {
     var nonApplicationContent = 'x';
     var application = new Application(nonApplicationContent);
-    expect(application).to.have.property('error');
+    expect(application.valid).to.be.false;
   });
 
   it('should have function and argument properties when constructed with a application', function () {

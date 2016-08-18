@@ -11,13 +11,14 @@ describe('Abstraction', function () {
     var content = '&x.x';
     var abstraction = new Abstraction(content);
     expect(abstraction).to.have.property('content');
+    expect(abstraction).to.have.property('valid');
     expect(abstraction.content).to.be.equal(content);
   });
 
-  it('should have error when constructed with a non-abstraction content', function () {
+  it('should be invalid when constructed with a non-abstraction content', function () {
     var nonAbstractionContent = 'x';
     var abstraction = new Abstraction(nonAbstractionContent);
-    expect(abstraction).to.have.property('error');
+    expect(abstraction.valid).to.be.false;
   });
 
   it('should have a bound variable when constructed with a abstraction', function () {

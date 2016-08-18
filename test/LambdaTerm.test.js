@@ -9,6 +9,7 @@ describe('Lambda Term', function () {
     var content = 'xxx';
     var lambdaTerm = new LambdaTerm(form, content);
     expect(lambdaTerm).to.have.property('content');
+    expect(lambdaTerm).to.have.property('valid');
     expect(lambdaTerm.content).to.be.equal(content);
   });
 });

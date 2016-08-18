@@ -9,12 +9,13 @@ describe('Parentheses Convention', function () {
     var parenthesesContent = '(x)';
     var parentheses = new Parentheses(parenthesesContent);
     expect(parentheses).to.have.property('content');
+    expect(parentheses).to.have.property('valid');
   });
 
-  it('should have error when constructed with a non-application content', function () {
+  it('should be invalid when constructed with a non-application content', function () {
     var nonParenthesesContent = 'x';
     var parentheses = new Parentheses(nonParenthesesContent);
-    expect(parentheses).to.have.property('error');
+    expect(parentheses.valid).to.be.false;
   });
 
   it('should have body property when constructed with a parenthetical content', function () {
