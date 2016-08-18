@@ -28,9 +28,9 @@ describe('Abstraction', function () {
 
   it('should have a bound variable which can be constructed by variable', function () {
     var abstractionContent = '&x.x';
-    var boundVariable = 'x';
+    var boundVariable = new Variable('x');
     var abstraction = new Abstraction(abstractionContent);
-    expect(abstraction.boundVariable).to.be.equal(boundVariable);
+    expect(abstraction.boundVariable).to.be.eql(boundVariable);
   });
 
   it('should have a body when constructed with a abstraction', function () {
