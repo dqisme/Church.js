@@ -6,7 +6,7 @@ var Abstraction = function (content) {
   var self = this;
   var mutator = function (terms) {
     self.boundVariable = new Variable(terms[1]);
-    self.body = new LambdaTerm(null, terms[2]);
+    self.body = new Variable(terms[2]);
   };
   this.constructor(form, content, mutator);
 };

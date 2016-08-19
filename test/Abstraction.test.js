@@ -49,4 +49,13 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction.body).to.be.an.instanceOf(LambdaTerm);
   });
+
+  it('should have a body which is a variable when constructed with a abstraction', function () {
+    var bodyContentAsVariable = 'y';
+    var abstractionContent = '&x.' + bodyContentAsVariable;
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction.body).to.be.an.instanceOf(Variable);
+    var bodyAsVariable = new Variable(bodyContentAsVariable);
+    expect(abstraction.body).to.be.eql(bodyAsVariable);
+  });
 });
