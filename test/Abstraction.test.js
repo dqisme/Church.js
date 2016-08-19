@@ -1,3 +1,4 @@
+var Parentheses = require('../src/Parentheses');
 var Application = require('../src/Application');
 var Abstraction = require('../src/Abstraction');
 var Variable = require('../src/Variable');
@@ -75,6 +76,15 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction.body).to.be.an.instanceOf(Application);
     var bodyAsVariable = new Application(bodyContentAsApplication);
+    expect(abstraction.body).to.be.eql(bodyAsVariable);
+  });
+
+  it('should have a body which is parentheses when constructed with a abstraction', function () {
+    var bodyContentAsParentheses = '(x)';
+    var abstractionContent = '&x.' + bodyContentAsParentheses;
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction.body).to.be.an.instanceOf(Parentheses);
+    var bodyAsVariable = new Parentheses(bodyContentAsParentheses);
     expect(abstraction.body).to.be.eql(bodyAsVariable);
   });
 });
