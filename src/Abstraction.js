@@ -8,17 +8,13 @@ var Abstraction = function (content) {
   var self = this;
   var mutator = function (terms) {
     self.boundVariable = new Variable(terms[1]);
-    var validLambdaTerm = new Variable(terms[2]);
-    if (!validLambdaTerm.valid) {
-      validLambdaTerm = new Abstraction(terms[2]);
-    }
-    if (!validLambdaTerm.valid) {
-      validLambdaTerm = new Application(terms[2]);
-    }
-    if (!validLambdaTerm.valid) {
-      validLambdaTerm = new Parentheses(terms[2]);
-    }
-    self.body = validLambdaTerm;
+    [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
+      var lambdaTerm = new LambdaTermType(terms[2]);
+      if (lambdaTerm.valid) {
+        self.body = lambdaTerm;
+        return true;
+      }
+    })
   };
   this.constructor(form, content, mutator);
 };
