@@ -1,5 +1,6 @@
 var Abstraction = require('../src/Abstraction');
 var Variable = require('../src/Variable');
+var LambdaTerm = require('../src/LambdaTerm');
 
 describe('Abstraction', function () {
 
@@ -28,15 +29,24 @@ describe('Abstraction', function () {
   });
 
   it('should have a bound variable which can be constructed by variable', function () {
-    var abstractionContent = '&x.x';
-    var boundVariable = new Variable('x');
+    var boundVariableContent = 'x';
+    var abstractionContent = '&' + boundVariableContent + '.y';
+    var boundVariable = new Variable(boundVariableContent);
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction.boundVariable).to.be.eql(boundVariable);
   });
 
   it('should have a body when constructed with a abstraction', function () {
-    var abstractionContent = '&x.xyz';
+    var bodyContent = 'y';
+    var abstractionContent = '&x.' + bodyContent;
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction).to.have.property('body');
+  });
+
+  it('should have a body which is a lambda term when constructed with a abstraction', function () {
+    var bodyContent = 'y';
+    var abstractionContent = '&x.' + bodyContent;
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction.body).to.be.an.instanceOf(LambdaTerm);
   });
 });
