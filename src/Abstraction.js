@@ -1,5 +1,6 @@
 var LambdaTerm = require('./LambdaTerm');
 var Variable = require('./Variable');
+var Application = require('./Application');
 
 var Abstraction = function (content) {
   var form = /^&(.+?)\.(.+?)$/;
@@ -9,6 +10,9 @@ var Abstraction = function (content) {
     var validLambdaTerm = new Variable(terms[2]);
     if (!validLambdaTerm.valid) {
       validLambdaTerm = new Abstraction(terms[2]);
+    }
+    if (!validLambdaTerm.valid) {
+      validLambdaTerm = new Application(terms[2]);
     }
     self.body = validLambdaTerm;
   };

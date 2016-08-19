@@ -1,3 +1,4 @@
+var Application = require('../src/Application');
 var Abstraction = require('../src/Abstraction');
 var Variable = require('../src/Variable');
 var LambdaTerm = require('../src/LambdaTerm');
@@ -65,6 +66,15 @@ describe('Abstraction', function () {
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction.body).to.be.an.instanceOf(Abstraction);
     var bodyAsVariable = new Abstraction(bodyContentAsAbstraction);
+    expect(abstraction.body).to.be.eql(bodyAsVariable);
+  });
+
+  it('should have a body which is a application when constructed with a abstraction', function () {
+    var bodyContentAsApplication = 'x y';
+    var abstractionContent = '&x.' + bodyContentAsApplication;
+    var abstraction = new Abstraction(abstractionContent);
+    expect(abstraction.body).to.be.an.instanceOf(Application);
+    var bodyAsVariable = new Application(bodyContentAsApplication);
     expect(abstraction.body).to.be.eql(bodyAsVariable);
   });
 });
