@@ -24,10 +24,11 @@ describe('Abstraction', function () {
     expect(abstraction.valid).to.be.false;
   });
 
-  it('should have a bound variable when constructed with a abstraction', function () {
+  it('should have a bound variable and a body when constructed with a abstraction', function () {
     var abstractionContent = '&x.x';
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction).to.have.property('boundVariable');
+    expect(abstraction).to.have.property('body');
   });
 
   it('should have a bound variable which can be constructed by variable', function () {
@@ -36,13 +37,6 @@ describe('Abstraction', function () {
     var boundVariable = new Variable(boundVariableContent);
     var abstraction = new Abstraction(abstractionContent);
     expect(abstraction.boundVariable).to.be.eql(boundVariable);
-  });
-
-  it('should have a body when constructed with a abstraction', function () {
-    var bodyContent = 'y';
-    var abstractionContent = '&x.' + bodyContent;
-    var abstraction = new Abstraction(abstractionContent);
-    expect(abstraction).to.have.property('body');
   });
 
   it('should have a body which is a lambda term when constructed with a abstraction', function () {
