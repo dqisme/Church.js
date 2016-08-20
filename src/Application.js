@@ -5,7 +5,16 @@ var Application = function (content) {
   this.content = content;
   var self = this;
   var mutator = function (terms) {
-    self.function = terms[1];
+    var Variable = require('./Variable');
+    var Abstraction = require('./Abstraction');
+    var Parentheses = require('./Parentheses');
+    [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
+      var lambdaTerm = new LambdaTermType(terms[1]);
+      if (lambdaTerm.valid) {
+        self.function = lambdaTerm;
+        return true;
+      }
+    });
     self.argument = terms[2];
   }
   this.constructor(form, content, mutator);
