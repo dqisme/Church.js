@@ -55,4 +55,40 @@ describe('Application', function () {
     var functionAsParentheses = new Parentheses(functionContentAsParentheses);
     expect(application.function).to.be.eql(functionAsParentheses);
   });
+
+  it('should have a argument which can be a variable when constructed with a application', function () {
+    var argumentContentAsVariable = 'y';
+    var applicationContent = 'x ' + argumentContentAsVariable;
+    var application = new Application(applicationContent);
+    expect(application.argument).to.be.an.instanceOf(Variable);
+    var argumentAsParentheses = new Variable(argumentContentAsVariable);
+    expect(application.argument).to.be.eql(argumentAsParentheses);
+  });
+
+  it('should have a argument which can be a abstraction when constructed with a application', function () {
+    var argumentContentAsAbstraction = '&x.x';
+    var applicationContent = 'x ' + argumentContentAsAbstraction;
+    var application = new Application(applicationContent);
+    expect(application.argument).to.be.an.instanceOf(Abstraction);
+    var argumentAsAbstraction = new Abstraction(argumentContentAsAbstraction);
+    expect(application.argument).to.be.eql(argumentAsAbstraction);
+  });
+
+  it('should have a argument which can be a application when constructed with a application', function () {
+    var argumentContentAsApplication = 'y z';
+    var applicationContent = 'x ' + argumentContentAsApplication;
+    var application = new Application(applicationContent);
+    expect(application.argument).to.be.an.instanceOf(Application);
+    var argumentAsApplication = new Application(argumentContentAsApplication);
+    expect(application.argument).to.be.eql(argumentAsApplication);
+  });
+
+  it('should have a argument which can be parentheses when constructed with a application', function () {
+    var argumentContentAsParentheses = '(y)';
+    var applicationContent = 'x ' + argumentContentAsParentheses;
+    var application = new Application(applicationContent);
+    expect(application.argument).to.be.an.instanceOf(Parentheses);
+    var argumentAsParentheses = new Parentheses(argumentContentAsParentheses);
+    expect(application.argument).to.be.eql(argumentAsParentheses);
+  });
 });

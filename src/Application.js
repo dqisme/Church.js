@@ -8,15 +8,20 @@ var Application = function (content) {
     var Variable = require('./Variable');
     var Abstraction = require('./Abstraction');
     var Parentheses = require('./Parentheses');
-    [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
-      var lambdaTerm = new LambdaTermType(terms[1]);
-      if (lambdaTerm.valid) {
-        self.function = lambdaTerm;
-        return true;
-      }
+    var schema = {
+      function: terms[1],
+      argument: terms[2]
+    };
+    Object.keys(schema).forEach(function (property) {
+      [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
+        var lambdaTerm = new LambdaTermType(schema[property]);
+        if (lambdaTerm.valid) {
+          self[property] = lambdaTerm;
+          return true;
+        }
+      });
     });
-    self.argument = terms[2];
-  }
+  };
   this.constructor(form, content, mutator);
 };
 
