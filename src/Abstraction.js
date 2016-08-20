@@ -14,7 +14,7 @@ var Abstraction = function (content) {
         self.body = lambdaTerm;
         return true;
       }
-    })
+    });
   };
   this.constructor(form, content, mutator);
 };
