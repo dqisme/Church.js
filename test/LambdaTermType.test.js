@@ -1,6 +1,6 @@
 var LambdaTermType = require('../src/LambdaTermType');
 
-describe('Lambda Term', function () {
+describe('Lambda Term Type', function () {
   it('should be a function', function () {
     expect(LambdaTermType).to.be.a('function');
   });
