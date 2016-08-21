@@ -1,3 +1,1 @@
-/**
- * Created by dq on 8/21/16.
- */
+var LambdaTerm = require('../src/LambdaTerm');
