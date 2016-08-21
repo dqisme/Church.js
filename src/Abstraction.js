@@ -1,4 +1,4 @@
-var LambdaTerm = require('./LambdaTerm');
+var LambdaTermType = require('./LambdaTermType');
 var Variable = require('./Variable');
 var Application = require('./Application');
 var Parentheses = require('./Parentheses');
@@ -19,6 +19,6 @@ var Abstraction = function (content) {
   this.constructor(form, content, mutator);
 };
 
-Abstraction.prototype = new LambdaTerm();
+Abstraction.prototype = new LambdaTermType();
 
 module.exports = Abstraction;

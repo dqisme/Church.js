@@ -1,4 +1,4 @@
-var LambdaTerm = require('./LambdaTerm');
+var LambdaTermType = require('./LambdaTermType');
 
 var Parentheses = function (content) {
   var form = /^\((.+?)\)$/;
@@ -18,6 +18,6 @@ var Parentheses = function (content) {
   this.constructor(form, content, mutator);
 };
 
-Parentheses.prototype = new LambdaTerm();
+Parentheses.prototype = new LambdaTermType();
 
 module.exports = Parentheses;

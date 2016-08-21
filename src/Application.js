@@ -1,4 +1,4 @@
-var LambdaTerm = require('./LambdaTerm');
+var LambdaTermType = require('./LambdaTermType');
 
 var Application = function (content) {
   var form = /^(.+?) (.+?)$/;
@@ -25,6 +25,6 @@ var Application = function (content) {
   this.constructor(form, content, mutator);
 };
 
-Application.prototype = new LambdaTerm();
+Application.prototype = new LambdaTermType();
 
 module.exports = Application;

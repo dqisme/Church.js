@@ -2,7 +2,7 @@ var Parentheses = require('../src/Parentheses');
 var Application = require('../src/Application');
 var Abstraction = require('../src/Abstraction');
 var Variable = require('../src/Variable');
-var LambdaTerm = require('../src/LambdaTerm');
+var LambdaTermType = require('../src/LambdaTermType');
 
 describe('Abstraction', function () {
 
@@ -43,7 +43,7 @@ describe('Abstraction', function () {
     var bodyContent = 'y';
     var abstractionContent = '&x.' + bodyContent;
     var abstraction = new Abstraction(abstractionContent);
-    expect(abstraction.body).to.be.an.instanceOf(LambdaTerm);
+    expect(abstraction.body).to.be.an.instanceOf(LambdaTermType);
   });
 
   it('should have a body which is a variable when constructed with a abstraction', function () {

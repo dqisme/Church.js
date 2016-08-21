@@ -1,4 +1,4 @@
-var LambdaTerm = function (form, content, mutator) {
+var LambdaTermType = function (form, content, mutator) {
   form = form || /^.*$/;
   this.content = content;
   this.valid = form.test(content);
@@ -7,4 +7,4 @@ var LambdaTerm = function (form, content, mutator) {
   }
 };
 
-module.exports = LambdaTerm;
+module.exports = LambdaTermType;

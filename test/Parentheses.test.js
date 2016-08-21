@@ -8,7 +8,7 @@ describe('Parentheses Convention', function () {
     expect(Parentheses).to.be.a('function');
   });
 
-  it('should have form and content inherited from LambdaTerm', function () {
+  it('should have form and content inherited from LambdaTermType', function () {
     var parenthesesContent = '(x)';
     var parentheses = new Parentheses(parenthesesContent);
     expect(parentheses).to.have.property('content');
