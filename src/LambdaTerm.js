@@ -1,3 +1,5 @@
-/**
- * Created by dq on 8/21/16.
- */
+var LambdaTerm = function (content) {
+
+};
+
+module.exports = LambdaTerm;
