@@ -15,6 +15,9 @@ var LambdaTerm = function (content) {
       return true;
     }
   });
+  if (!finalLambdaTerm.valid) {
+    throw new Error('lambda term "' + content + '" is INVALID\n');
+  }
   return finalLambdaTerm;
 };
 
