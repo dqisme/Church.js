@@ -4,27 +4,18 @@ var Application = require('../src/Application');
 var Parentheses = require('../src/Parentheses');
 
 var LambdaTerm = function (content) {
-  var lambdaTerm = {
+  var finalLambdaTerm = {
     content: content,
     valid: false
   };
-  lambdaTerm = new Variable(content);
-  if (lambdaTerm.valid) {
-    return lambdaTerm;
-  }
-  lambdaTerm = new Parentheses(content);
-  if (lambdaTerm.valid) {
-    return lambdaTerm;
-  }
-  lambdaTerm = new Abstraction(content);
-  if (lambdaTerm.valid) {
-    return lambdaTerm;
-  }
-  lambdaTerm = new Application(content);
-  if (lambdaTerm.valid) {
-    return lambdaTerm;
-  }
-  return lambdaTerm;
+  [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
+    var lambdaTerm = new LambdaTermType(content);
+    if (lambdaTerm.valid) {
+      finalLambdaTerm = lambdaTerm;
+      return true;
+    }
+  });
+  return finalLambdaTerm;
 };
 
 module.exports = LambdaTerm;
