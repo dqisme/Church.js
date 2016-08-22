@@ -4,7 +4,11 @@ var Application = require('../src/Application');
 var Parentheses = require('../src/Parentheses');
 
 var LambdaTerm = function (content) {
-  var lambdaTerm = new Variable(content);
+  var lambdaTerm = {
+    content: content,
+    valid: false
+  };
+  lambdaTerm = new Variable(content);
   if (lambdaTerm.valid) {
     return lambdaTerm;
   }
@@ -20,6 +24,7 @@ var LambdaTerm = function (content) {
   if (lambdaTerm.valid) {
     return lambdaTerm;
   }
+  return lambdaTerm;
 };
 
 module.exports = LambdaTerm;
