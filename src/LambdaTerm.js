@@ -8,15 +8,15 @@ var LambdaTerm = function (content) {
   if (lambdaTerm.valid) {
     return lambdaTerm;
   }
+  lambdaTerm = new Parentheses(content);
+  if (lambdaTerm.valid) {
+    return lambdaTerm;
+  }
   lambdaTerm = new Abstraction(content);
   if (lambdaTerm.valid) {
     return lambdaTerm;
   }
   lambdaTerm = new Application(content);
-  if (lambdaTerm.valid) {
-    return lambdaTerm;
-  }
-  lambdaTerm = new Parentheses(content);
   if (lambdaTerm.valid) {
     return lambdaTerm;
   }
