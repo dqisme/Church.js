@@ -2,6 +2,7 @@ var LambdaTerm = require('../src/LambdaTerm');
 var Variable = require('../src/Variable');
 var Abstraction = require('../src/Abstraction');
 var Application = require('../src/Application');
+var Parentheses = require('../src/Parentheses');
 
 describe('Lambda Term', function () {
   it('should be a function', function () {
@@ -27,5 +28,12 @@ describe('Lambda Term', function () {
     var lambdaTerm = new LambdaTerm(content);
     var application = new Application(content);
     expect(lambdaTerm).to.be.eql(application);
+  });
+
+  it('should can be constructed to Parentheses', function () {
+    var content = '(x)';
+    var lambdaTerm = new LambdaTerm(content);
+    var parentheses = new Parentheses(content);
+    expect(lambdaTerm).to.be.eql(parentheses);
   });
 });
