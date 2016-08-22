@@ -1,6 +1,7 @@
 var LambdaTerm = require('../src/LambdaTerm');
 var Variable = require('../src/Variable');
 var Abstraction = require('../src/Abstraction');
+var Application = require('../src/Application');
 
 describe('Lambda Term', function () {
   it('should be a function', function () {
@@ -19,5 +20,12 @@ describe('Lambda Term', function () {
     var lambdaTerm = new LambdaTerm(content);
     var abstraction = new Abstraction(content);
     expect(lambdaTerm).to.be.eql(abstraction);
+  });
+
+  it('should can be constructed to a Application', function () {
+    var content = 'x y';
+    var lambdaTerm = new LambdaTerm(content);
+    var application = new Application(content);
+    expect(lambdaTerm).to.be.eql(application);
   });
 });
