@@ -8,7 +8,7 @@ var LambdaTerm = function (content) {
     content: content,
     valid: false
   };
-  [Variable, Abstraction, Application, Parentheses].some(function (LambdaTermType) {
+  [Variable, Parentheses, Abstraction, Application].some(function (LambdaTermType) {
     var lambdaTerm = new LambdaTermType(content);
     if (lambdaTerm.valid) {
       finalLambdaTerm = lambdaTerm;
