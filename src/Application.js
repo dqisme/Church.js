@@ -10,6 +10,7 @@ var Application = function (content) {
     self.argument = new LambdaTerm(terms[2]);
   };
   this.constructor(form, content, mutator);
+  this.constructor = Application;
 };
 
 Application.prototype = new LambdaTermType();

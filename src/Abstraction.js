@@ -9,9 +9,7 @@ var Abstraction = function (content) {
     self.boundVariable = new Variable(terms[1]);
     self.body = new LambdaTerm(terms[2]);
   };
-  this.constructor(form, content, mutator);
+  return LambdaTermType(form, content, mutator);
 };
-
-Abstraction.prototype = new LambdaTermType();
 
 module.exports = Abstraction;

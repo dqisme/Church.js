@@ -8,6 +8,7 @@ var Parentheses = function (content) {
     self.body = new LambdaTerm(terms[1]);
   };
   this.constructor(form, content, mutator);
+  this.constructor = Parentheses;
 };
 
 Parentheses.prototype = new LambdaTermType();
